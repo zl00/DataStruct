@@ -1,4 +1,4 @@
-int maxSize = 1024;
+#include "graph.h"
 
 typedef struct {
     int no;

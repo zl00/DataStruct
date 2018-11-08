@@ -1,18 +1,4 @@
-typedef struct ArcNode {
-    int adjvex;
-    int info;
-    ArcNode *nextarc;
-} ArcNode;
-
-typedef struct {
-    char data;
-    ArcNode *firstarc;
-} VNode;
-
-typedef struct {
-    VNode adjlist[maxSize];
-    int n, e;
-} AGraph;
+#include "结构-临界表.h"
 
 int visit[maxSize];
 void DFS(AGraph *G, int v) {

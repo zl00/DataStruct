@@ -1,3 +1,5 @@
+#include "graph.h"
+
 typedef struct {
     VNode adjlist[maxSize];
     int n, e;

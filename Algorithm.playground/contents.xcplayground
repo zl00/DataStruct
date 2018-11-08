@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
+    <pages>
+        <page name='Graph-Shortest-Floyd'/>
+        <page name='Graph-Shortest-Dijkstra'/>
+        <page name='Graph-MST-Kruskal'/>
+        <page name='Graph-MST-Prim'/>
+        <page name='Graph-Tranverse-BFS'/>
+        <page name='Graph-Tranverse-DFS'/>
+        <page name='Graph-Topo-AOV'/>
+    </pages>
+</playground>
