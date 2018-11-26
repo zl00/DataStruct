@@ -8,5 +8,6 @@
         <page name='Graph-Tranverse-BFS'/>
         <page name='Graph-Tranverse-DFS'/>
         <page name='Graph-Topo-AOV'/>
+        <page name='Sort-Insert'/>
     </pages>
 </playground>
