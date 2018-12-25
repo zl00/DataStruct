@@ -1,9 +1,3 @@
-//: [Previous](@previous)
-
-import Foundation
-
-var input: [Int] = [49, 38, 65, 97, 13, 1, 129, 12]
-
 /**
  - 逻辑
  -- [粗调]
@@ -24,33 +18,36 @@ var input: [Int] = [49, 38, 65, 97, 13, 1, 129, 12]
  - 复杂度
  -- [时间]
     O(n*log₂ᴺ)
- 
+    
  -- [空间] 因为递归，所以空间都出在函数压栈上
     O(log₂ᴺ)
  */
-func quickSort(low: Int, high: Int) {
-    guard input.count >= 2, low < high else { return }
-    
-    var i = low, j = high
-    let temp = input[i]
-    
-    while i < j {
-        // right
-        while i < j, input[j] >= temp { j -= 1 }
-        if i < j { input[i] = input[j]; i += 1 }
-        
-        // left
-        while i < j, input[i] <= temp { i += 1 }
-        if i < j { input[j] = input[i]; j -= 1 }
+void QuickSort(int R[], int low, int high) {
+    if (low >= high) { 
+        return
     }
-    
-    input[i] = temp
-    
-    quickSort(low: low, high: i-1)
-    quickSort(low: i+1, high: high)
+
+    int i = low, j = high;
+    int temp = R[i];
+
+    while (i < j) {
+        // right
+        while (i < j && R[j] >= temp) { j--; }
+        if (i < j) {
+            R[i] = R[j];
+            i++;
+        }
+
+        // left
+        while (i < j && R[i] <= temp) { ++i; }
+        if (i < j) {
+            R[j] = R[i];
+            j--;
+        }
+    }
+
+    R[i] = temp;
+
+    QuickSort(R, low, i-1);
+    QuickSort(R, i+1, high);
 }
-
-quickSort(low: 0, high: input.count - 1)
-
-print(input)
-

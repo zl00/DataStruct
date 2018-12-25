@@ -9,5 +9,9 @@
         <page name='Graph-Tranverse-DFS'/>
         <page name='Graph-Topo-AOV'/>
         <page name='Sort-Insert'/>
+        <page name='Sort-Insert-Binary'/>
+        <page name='Sort-Insert-Shell'/>
+        <page name='Sort-Swap-Bubble'/>
+        <page name='Sort-Swap-Quick'/>
     </pages>
 </playground>
