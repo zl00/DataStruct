@@ -13,5 +13,7 @@
         <page name='Sort-Insert-Shell'/>
         <page name='Sort-Swap-Bubble'/>
         <page name='Sort-Swap-Quick'/>
+        <page name='Sort-Select'/>
+        <page name='Sort-Select-Heap'/>
     </pages>
 </playground>
