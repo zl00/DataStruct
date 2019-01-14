@@ -21,7 +21,7 @@ void bubbleSort(int input[], int n) {
             }
 
             if (flag == 0) {
-                return
+                return;
             }
         }
     }

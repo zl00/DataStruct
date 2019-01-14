@@ -20,11 +20,12 @@ void BinaryInsertSort(int R[], int n) {
             } else if temp > R[middle] {
                 low = min(middle + 1, high);
             } else {
-                assert();
+                low = middle;
+                break;
             }
         } while (low != high);
 
-        if temp < result[low] {
+        if temp <= result[low] {
             insert = low;
         } else {
             insert = low + 1;
