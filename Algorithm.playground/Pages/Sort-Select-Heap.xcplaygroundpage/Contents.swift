@@ -4,12 +4,14 @@ import Foundation
 
 // [wiki](https://www.cnblogs.com/chengxiao/p/6129630.html)
 
-func swap(_ result: inout [Int], i: Int, j: Int) {
-    let tmp = result[i]
-    result[i] = result[j]
-    result[j] = tmp
-}
-
+/**
+ `Sift`: 这个函数名字很精妙，Sift本意是“筛”这个动作。
+ 因此，我所建立的思维模型如下：
+ - defs:
+    1. 有序树（平衡二叉树--饱和），有序是指--叶子比父节点小。
+    2. Sift函数的含义是，将low这个节点筛到合适的位置。
+    3. 外部调用Sift函数建立平衡二叉树时，必须从最后一个父节点开始sift，这样才能保证层层调用sift后，得到一棵平衡二叉树。
+ */
 func sift(_ result: inout [Int], low: Int, high: Int) {
     var i = low
     var j = 2 * i + 1 // left
@@ -40,6 +42,12 @@ func HeapSort(_ result: inout [Int]) {
         sift(&result, low: 0, high: i-1) // 此时的堆除了[0]，其余都是排序好的。所以只需要sift一轮即可。
         i -= 1
     }
+}
+
+func swap(_ result: inout [Int], i: Int, j: Int) {
+    let tmp = result[i]
+    result[i] = result[j]
+    result[j] = tmp
 }
 
 var arr = [49, 38, 65, 97, 13, 1, 129, 12]

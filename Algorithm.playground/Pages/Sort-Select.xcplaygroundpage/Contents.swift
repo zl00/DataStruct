@@ -3,8 +3,6 @@
 import Foundation
 
 /**
- 相比bubble，优点很明显减少交换次数
- 
  时间：o(n²)
  空间：o(1)
  */

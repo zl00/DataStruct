@@ -3,7 +3,7 @@
 
 # 种类
 1. 插入
-   1. 直接 
+   1. 直接
       1. OBGJECT: 想象待排数组分作 [order section][disorder section]
       2. 逻辑: 将DISORDER元素不断插入到ORDER部分的过程 
             ⚠️找到“合适”位置前，要把“不是目标”位置元素往后挪一位
@@ -41,6 +41,14 @@
         
 3. 选择
    1. 简单
+      1. OBGJECT: 想象待排数组分作 [order section][disorder section]
+      2. 逻辑：每次从[disorder section]中找到合适的那部分。
+      3. “简单选择” 🆚 “直接插入”：
+         1. 两者都是分作order+disorder2部分；
+         2. 前者是从disorder中找到合适的append；后者是将disorder的第一个insert到合适的位置。
+      4. 复杂度：
+         1. 时间复杂度：（n-1+1)*(n-1)/2，为o(n²)
+         2. 空间复杂度： o(1)
    2. 堆
 4. 归并
    1. 二路归并
