@@ -13,6 +13,9 @@ func mergeSort(_ input: inout [Int], _ low: Int, _ high: Int) {
 }
 
 func merge(_ input: inout [Int], _ low: Int, _ mid: Int, _ high: Int) {
+    guard low < high else { return }
+    
+    print("merge")
     var i = low, j = mid + 1
     var temp = [Int]()
     
@@ -47,6 +50,6 @@ func merge(_ input: inout [Int], _ low: Int, _ mid: Int, _ high: Int) {
     }
 }
 
-var arr = [49, 38, 65, 97, 13, 1, 129, 12, 132, 12, 38, 13]
+var arr = [49, 38, 65, 97, 13, 1, 129, 12, 132, 12, 38, 13, 49, 38, 65, 97, 13, 1, 129, 12, 132, 12, 38, 13]
 mergeSort(&arr, 0, arr.count-1)
 print(arr)
