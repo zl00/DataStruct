@@ -15,7 +15,7 @@
 
 ## 二叉树遍历
 见 
-[logo]: https://github.com/zl00/DataStruct/tree/master/树/tree-base-excecute-flow.jpg "traverse exec flow"
+[execute flow](https://github.com/zl00/DataStruct/tree/master/树/tree-base-excecute-flow.jpg "traverse exec flow")
 
 ### 遍历定义
 
