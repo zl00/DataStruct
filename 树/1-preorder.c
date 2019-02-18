@@ -8,10 +8,3 @@ void preorder(BTNode *p) {
     }
 }
 
-void preorder2(BTNode *bt) {
-    if (bt != NULL) {
-        BTNode *stack[maxSize];
-        int top = -1;
-        BTNode *p;
-    }
-}
