@@ -5,11 +5,18 @@ typedef struct TBTNode {
     struct TBTNode *rchild;
 } TBTNode;
 
+////////////////////////////建立线索//////////////////////////////
+/**
+功能：
+1. 建立前驱、后继关系
+2. 更新pre
+*/
 void InThread(TBTNode *p, TBTNode *&pre) {
-    if (!p)  return;
+    if (p == NULL) return;
 
-    InThread(p, pre);
+    InThread(p->lchild, pre);
 
+    // 1. 建立前驱、后继关系
     if (p->lchild == NULL) {
         p->lchild = pre;
         p->ltag = 1;
@@ -18,9 +25,11 @@ void InThread(TBTNode *p, TBTNode *&pre) {
         pre->rchild = p;
         pre->rtag = 1;
     }
-
+    
+    // 2. 更新pre
     pre = p;
-    InThread(p, pre);
+
+    InThread(p->rchild, pre);
 }
 
 void createInThread(TBTNode *root) {
@@ -32,14 +41,18 @@ void createInThread(TBTNode *root) {
     }
 }
 
-TBTNode *first(TBTNode *p) {
+////////////////////////////遍历//////////////////////////////
+TBTNode* first(TBTNode *p) {
     while (p->ltag == 0) p = p->lchild;
     return p;
 }
 
-TBTNode *next(TBTNode *p) {
-    if (p->rtag == 1) return p->rchild;
-    else return first(p->rchild);
+TBTNode* next(TBTNode *p) {
+    if (p->rtag == 1) {
+        return p->rchild;
+    } else {
+        return first(p->rchild);
+    }
 }
 
 void Inorder(TBTNode *root) {
