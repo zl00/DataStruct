@@ -16,5 +16,6 @@
         <page name='Sort-Select'/>
         <page name='Sort-Select-Heap'/>
         <page name='Sort-Merge'/>
+        <page name='String-KMP'/>
     </pages>
 </playground>
