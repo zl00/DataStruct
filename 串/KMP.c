@@ -48,5 +48,7 @@ int kmp(String str, String substr, int next[]) {
 
     if (j == substr.length) {
         return i - substr.length + 1
+    } else {
+        return -1;
     }
 }
