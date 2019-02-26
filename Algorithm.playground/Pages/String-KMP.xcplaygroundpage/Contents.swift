@@ -60,7 +60,7 @@ extension String {
 
 // MARK: - Primary string
 extension String {
-    func search(_ sub: String, _ next: [Int]) -> Bool {
+    func kmp(_ sub: String, _ next: [Int]) -> Bool {
         var i = 0, j = 0
         
         while i < self.count && j < sub.count {
@@ -79,5 +79,5 @@ extension String {
 let primary = "abcdadadaaddadcaadadadadadasdadasdadsadsadadaaddaa"
 let sub = "aaaabc"
 
-//primary.search(sub, sub.next)
-primary.search(sub, sub.nextVal)
+//primary.kmp(sub, sub.next)
+primary.kmp(sub, sub.nextVal)
