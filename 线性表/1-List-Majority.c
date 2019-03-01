@@ -37,9 +37,13 @@ bool Majority2(int A[], int n, int &i, int &j) {
     for (int i = 0; i < n; ++i) {
         if (count1 == 0) {
             candidate1 = A[i];
-            count1++;
         } else if (count2 == 0) {
             candidate2 = A[i];
+        }
+
+        if (A[i] == candidate1) {
+            count1++;
+        } else if (A[i] == candidate2) {
             count2++;
         } else {
             count1--;
