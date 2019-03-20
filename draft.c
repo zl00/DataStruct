@@ -1,49 +1,27 @@
-typedef struct TBTNode {
-    char data;
-    int ltag, rtag;
-    struct TBTNode *lchild;
-    struct TBTNode *rchild;
-} TBTNode;
+typedef struct Node {
+    int data;
+    struct Node *link;
+} Node;
 
-void InThread(TBTNode *p, TBTNode *&pre) {
-    if (!p)  return;
+void filter(Node *h, int n) {
+    Node *p = h, *r;
+    int m;
+    int *q;
 
-    InThread(p, pre);
+    q = (int *)malloc(sizeof(int) * (n + 1));
+    for (int i = 0; i < n+1; i+=) *(q+i) = 0;
 
-    if (p->lchild == NULL) {
-        p->lchild = pre;
-        p->ltag = 1;
+    while (p->link != NULL) {
+        m = p->link->data > 0 ? p->link->data : -p->link->data;
+        if (*(q+m) == 0) {
+            *(q+m) = 1;
+            p = p->link;
+        } else {
+            r = p->link;
+            p->link = r;
+            free(r);
+        }
     }
-    if (pre != NULL && pre->rchild == NULL) {
-        pre->rchild = p;
-        pre->rtag = 1;
-    }
 
-    pre = p;
-    InThread(p, pre);
-}
-
-void createInThread(TBTNode *root) {
-    TBTNode *pre = NULL;
-    if (root != NULL) {
-        InThread(root, pre);
-        pre->rchild = NULL;
-        pre->rtag = 1;
-    }
-}
-
-TBTNode *first(TBTNode *p) {
-    while (p->ltag == 0) p = p->lchild;
-    return p;
-}
-
-TBTNode *next(TBTNode *p) {
-    if (p->rtag == 1) return p->rchild;
-    else return first(p->rchild);
-}
-
-void Inorder(TBTNode *root) {
-    for (TBTNode *p = first(root); p != NULL; p = next(p)) {
-        visit(p);
-    }
+    free(q);
 }
