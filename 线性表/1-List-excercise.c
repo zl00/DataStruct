@@ -1,4 +1,5 @@
-// 1.
+/** q1.
+*/
 bool Del_Min(SqList &L, ElemType &value) {
     if (L.length == 0) return false;
 
@@ -13,7 +14,9 @@ bool Del_Min(SqList &L, ElemType &value) {
     return true;
 }
 
-// 2.
+/** q2.
+    注意写法。用这种头尾调换的方式更好
+*/
 void Reverse(SqList &L) {
     ElemType tmp;
     for (int i = 0; i < L.length / 2; ++i) {
@@ -23,29 +26,21 @@ void Reverse(SqList &L) {
     }
 }
 
-// 3.
-void del_x_1(SqList &L, ElemType x) {
+/** q3.
+*/
+void del_x(SqList &L, ElemType x) {
     int k = 0;
     for (int i = 0; i < L.length; ++i)
         if (L.data[i] != x)
-            L.[k++] = L.data[i];
+            L.data[k++] = L.data[i];
     L.length = k;
 }
 
-void del_x_2(SqList &L, ElemType x) {
-    int k = 0;
-    for (int i = 0; i < L.length; ++i) {
-        if (L.data[i] == x)
-            k++;
-        else
-            L.data[i-k] = L.data[i];
-    }
-    L.length = L.length - k;
-}
-
-// 6.
+/** q6.
+    用下面这种2个指针方式，使得逻辑更清晰些。
+*/
 bool delete_same(SqList &L) {
-    if (L.length == 0) return false;
+    if (L.length <= 1) return false;
 
     int i, j;
     for (i = 0, j = 1; j < L.length; ++j)
@@ -56,7 +51,10 @@ bool delete_same(SqList &L) {
     return true;
 }
 
-// 7.
+////////2019.3.23
+
+/** q7.
+*/
 bool Merge(SeqList A, SeqlList B, SeqlList &C) {
     if (A.length + B.length > C.maxSize) return false;
 
@@ -79,7 +77,8 @@ bool Merge(SeqList A, SeqlList B, SeqlList &C) {
 }
 
 
-// 8.
+/** q8.
+*/
 typedef int DataType;
 void Reverse(DataType A[], int left, int right, int arraySize) {
     if (left >= right || right >= arraySize) return;
@@ -99,7 +98,8 @@ void Exchange(DataType A[], int m, int n, int arraySize) {
 }
 
 
-// 9.
+/** q9.
+*/
 void SearchExchangeInsert(ElemType A[], int n, ElemType x) {
     int low = 0, high = n-1, mid;
     
@@ -120,13 +120,3 @@ void SearchExchangeInsert(ElemType A[], int n, ElemType x) {
         A[high+1] = x;
     }
 }
-
-
-
-
-
-
-
-
-
-
