@@ -51,8 +51,6 @@ bool delete_same(SqList &L) {
     return true;
 }
 
-////////2019.3.23
-
 /** q7.
 */
 bool Merge(SeqList A, SeqlList B, SeqlList &C) {
@@ -85,10 +83,10 @@ void Reverse(DataType A[], int left, int right, int arraySize) {
 
     int mid = (left + right) / 2;
     DataType tmp;
-    for (int i = 0; i < mid - left; ++i) {
+    for (int i = 0; i <= mid - left; ++i) {
         tmp = A[left+i];
         A[left+i] = A[right-i];
-        A[right-i] = A[left+i];
+        A[right-i] = tmp;
     }
 }
 void Exchange(DataType A[], int m, int n, int arraySize) {
@@ -97,6 +95,7 @@ void Exchange(DataType A[], int m, int n, int arraySize) {
     Reverse(A, n, m + n - 1, arraySize);
 }
 
+/// 2019.3.26
 
 /** q9.
 */
