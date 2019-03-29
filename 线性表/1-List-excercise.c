@@ -95,8 +95,6 @@ void Exchange(DataType A[], int m, int n, int arraySize) {
     Reverse(A, n, m + n - 1, arraySize);
 }
 
-/// 2019.3.26
-
 /** q9.
 */
 void SearchExchangeInsert(ElemType A[], int n, ElemType x) {

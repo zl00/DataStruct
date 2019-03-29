@@ -1,4 +1,4 @@
-/**
+/** 10
 */
 void Reverse(int A[], int left, int right, int arraySize) {
     if (left >= right || right >= arraySize) return;
@@ -18,7 +18,7 @@ void Exchange(int A[], int m, int n, int arraySize) {
 }
 
 
-/**
+/** 11
 */
 int Median_Search(int A[], int B[], int n) {
     int s1 = 0, d1 = n-1, m1;
@@ -51,7 +51,7 @@ bool isOdd(int s, int d) {
 }
 
 
-/**
+/** 12
 摩尔投票问题
 
 问题: 找出一组数字序列中出现次数大于总数1/2的数字,显然这个数字只可能有一个。
