@@ -1,15 +1,19 @@
 /**
-    列题6
-    使带头结点链表 升序排列
+    例6 带头结点单链表 升序排列
+
+    从头开始建立升序单链表
 */
 void Sort(LinkList &L) {
-    LNode *p = L->next, q;
-    L->next = NULL;
+    LNode *p = L->next; // 待插入元素
+    LNode *q; // 待插入位置
+    L->next = NULL; // 从头开始建立升序单链表
     
     p = r;
     while (p != NULL) {
         q = L;
-        while (q->next != NULL && q->next->data < p->data) q = q->next;
+        while (q->next != NULL && q->next->data < p->data)
+            q = q->next;
+        
         q->next = p;
         p = p->next;
         p->next = NULL;
@@ -17,8 +21,7 @@ void Sort(LinkList &L) {
 }
 
 /**
-    列题7
-    删除带头结点链表 中 在(min, max)范围内的结点
+    例7 带头结点单链表 删除(min, max)范围内的结点
 */
 void RangeDelete(LinkList &L, ElemType min, ElemType max) {
     LNode *pre, p;
@@ -38,7 +41,7 @@ void RangeDelete(LinkList &L, ElemType min, ElemType max) {
 }
 
 /**
-    列题8
+    例8
 */
 void Search_1st_Common(LinkList &L1, LinkList &L2) {
     LinkList longList, shortList;
@@ -98,6 +101,7 @@ void Min_Delete(LinkList &head) {
     free(head);
 }
 
+// 2019.4.2
 /**
     例题10
 */

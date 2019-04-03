@@ -18,7 +18,11 @@ void Exchange(int A[], int m, int n, int arraySize) {
 }
 
 
-/** 11
+/** 11 求2个有序数组合成后的中位数
+
+    思想： 二分法每次选出结果的一般（小的那半）
+        e.g. 2个长度为8的数组:  4个, 2个, 1个
+        e.g. 2个长度为10的数组: 5个, 2个, 1个, 1个
 */
 int Median_Search(int A[], int B[], int n) {
     int s1 = 0, d1 = n-1, m1;
@@ -32,10 +36,11 @@ int Median_Search(int A[], int B[], int n) {
             return A[m1];
         }
         else if (A[m1] < B[m2]) {
+            d2 = m2;
             /**
             ☁️ 为什么长度是odd时，处理会不同？
+            可能是因为保证A，B待选数组长度一样
             */
-            d2 = m2;
             s1 = isOdd(s1, d1) ? m1 : m1 + 1;
         }
         else {
