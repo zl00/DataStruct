@@ -41,3 +41,5 @@
 ## Huffman树
 
 
+## 平衡二叉树插入
+http://www.iqiyi.com/w_19ru8hixdx.html
