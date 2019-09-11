@@ -1,4 +1,4 @@
-#include "结构-临界表.h"
+#include "结构-邻接表.h"
 
 int visit[maxSize];
 void BFS(AGraph *G, int v) {

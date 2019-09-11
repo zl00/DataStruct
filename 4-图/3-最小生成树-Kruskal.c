@@ -1,10 +1,5 @@
 #include "结构-邻接矩阵.h"
 
-/*
- 并查集
-    1. 快速合并2个并查集
-    2. 快速判断元素是否属于同一个集合
-*/
 typedef struct {
     int a, b; // a -> b
     int w;
@@ -13,7 +8,9 @@ typedef struct {
 Road road[maxSize];
 
 /**
-    并查集
+ 并查集
+    1. 快速合并2个并查集
+    2. 快速判断元素是否属于同一个集合
 */
 int v[maxSize];  // 存放的是前驱
 

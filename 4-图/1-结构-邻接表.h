@@ -12,6 +12,5 @@ typedef struct {
 
 typedef struct ArcNode {
     int adjvex;
-    int info;
     struct ArcNode *nextarc;
 } ArcNode;
