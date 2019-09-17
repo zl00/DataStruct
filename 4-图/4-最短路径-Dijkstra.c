@@ -31,7 +31,7 @@ void Dijkstra(MGraph g, int v, int dist[], int path[]) {
             path[i] = v;
         } else {
             path[i] = -1;
-        } 
+        }
     }
     set[v] = 1; 
     path[v] = -1;

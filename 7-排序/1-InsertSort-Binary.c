@@ -9,7 +9,7 @@ void BinaryInsertSort(int R[], int n) {
 
     for (i = 1; i < n; ++i) {
         low = 0;
-        high = n - 1;
+        high = i - 1;
 
         temp = R[i];
 
@@ -23,15 +23,16 @@ void BinaryInsertSort(int R[], int n) {
                 low = middle;
                 break;
             }
-        } while (low != high);
+        } while (low <= high);
 
+        // 这样想，low位置的值是最接近temp的值。
         if temp <= result[low] {
             insert = low;
         } else {
             insert = low + 1;
         }
 
-        for (j = i; i > insert; --j) {
+        for (j = i; j > insert; --j) {
             R[j] = R[j-1];
         }
         R[insert] = temp;

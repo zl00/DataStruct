@@ -19,7 +19,7 @@ void sift(int R[], int low, int high) {
 }
 
 void heapSort(int R[], int n) {
-    int low = n / 2 - 1;
+    int low = n / 2 - 1; // 第一个非叶子结点 `n / 2 - 1`
     while (low >= 0) {
         sift(R, low, n);
         low--;
