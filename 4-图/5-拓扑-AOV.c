@@ -4,7 +4,7 @@
     1. 入度为0的Vertex入stack
     2. 掏空stack，访问出栈Vertex，并依赖它的节点入度--
 */
-int TopSort(AGraph *G) {
+int TopoSort(AGraph *G) {
     int i, j, n = 0;
     int stack[maxSize], top = -1; // 栈
     ArcNode *p;

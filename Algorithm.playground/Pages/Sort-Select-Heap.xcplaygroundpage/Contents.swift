@@ -21,7 +21,7 @@ func sift(_ result: inout [Int], low: Int, high: Int) {
         
         guard result[i] < result[j] else { break }
         
-        swap(&result, i: i, j: j)
+        swap(&result, i: i, j: j) // 交换之后i位置元素是正确的了，但j位置就可能不正确了，所以才会继续筛
         
         i = j
         j = 2 * i + 1
